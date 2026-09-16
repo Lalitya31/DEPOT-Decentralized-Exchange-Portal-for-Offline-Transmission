@@ -1,0 +1,30 @@
+.depot-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--depot-ink);
+}
+
+.depot-indicator__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: none;
+  background: var(--depot-line-strong);
+}
+
+.depot-indicator__dot--positive {
+  background: var(--depot-raspberry);
+}
+
+.depot-indicator__dot--neutral {
+  background: var(--depot-line-strong);
+}
+
+.depot-indicator__dot--warning {
+  background: #b06a00;
+}

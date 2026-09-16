@@ -1,0 +1,49 @@
+.depot-status-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px 20px;
+  padding-block: 17px;
+  border-bottom: 1px solid var(--depot-line);
+}
+
+.depot-status-row__label {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--depot-ink-secondary);
+}
+
+.depot-status-row__value {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--depot-ink);
+  text-align: end;
+}
+
+.depot-status-row__value > *:first-child {
+  margin-top: 0;
+}
+
+/* Rows that carry an extra visual (currently the storage meter) stack so the
+   detail can use the full column width instead of the value cell. */
+.depot-status-row--stacked {
+  display: block;
+}
+
+.depot-status-row--stacked .depot-status-row__label {
+  display: block;
+}
+
+.depot-status-row--stacked .depot-status-row__value {
+  display: block;
+  margin-top: 6px;
+  text-align: start;
+}
+
+.depot-status-row__detail {
+  margin-top: 14px;
+}
