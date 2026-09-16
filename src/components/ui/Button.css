@@ -1,0 +1,99 @@
+.depot-button {
+  --depot-button-height: 44px;
+  --depot-button-padding: 0 22px;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--depot-button-height);
+  padding: var(--depot-button-padding);
+  border: 1px solid transparent;
+  border-radius: 980px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    opacity var(--duration-base) var(--ease-out);
+}
+
+.depot-button--large {
+  --depot-button-height: 50px;
+  --depot-button-padding: 0 30px;
+  font-size: 16px;
+}
+
+/* Primary ---------------------------------------------------------------- */
+
+.depot-button--primary {
+  background-color: var(--depot-raspberry);
+  color: #ffffff;
+}
+
+.depot-button--primary:hover {
+  background-color: var(--depot-raspberry-deep);
+}
+
+/* Secondary -------------------------------------------------------------- */
+
+.depot-button--secondary {
+  background-color: transparent;
+  color: var(--depot-ink);
+  border-color: var(--depot-line-strong);
+}
+
+.depot-button--secondary:hover {
+  border-color: var(--depot-ink);
+}
+
+/* Quiet text link with a sliding chevron --------------------------------- */
+
+.depot-button--link {
+  --depot-button-height: auto;
+  --depot-button-padding: 0;
+
+  gap: 6px;
+  color: var(--depot-raspberry);
+  background: none;
+}
+
+.depot-button__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.depot-button--link .depot-button__label::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background-color: currentColor;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23000' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.depot-button--link:hover {
+  color: var(--depot-raspberry-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.depot-button--link:hover .depot-button__label::after {
+  transform: translateX(3px);
+}
+
+.depot-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
